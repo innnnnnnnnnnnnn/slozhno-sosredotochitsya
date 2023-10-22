@@ -6,18 +6,15 @@
   background-attachment: fixed;
 }
 
-
-
 .page.theme_light {
   --main-bg-color: #f1b2ce;
   --accent-color: #ff8dcb;
   --main-text-color: #353430;
   --nav-color: #353430;
   background-image: url(../images/cover-image-light.png);
-  --section-heading-color:#ff0070; 
+  --section-heading-color: #ff0070;
   --footer-logo-color: #f1b2ce;
-  --header-logo-color: #FFC2E6;
-
+  --header-logo-color: #ffc2e6;
 }
 
 @media (prefers-color-scheme: light) {
