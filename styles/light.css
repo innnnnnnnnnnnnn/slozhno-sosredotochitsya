@@ -1,3 +1,11 @@
+.theme-light {
+  /*светлая тема стили*/
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 /*
   Специально для светлой темы при наличии класса.
   Здесь окажутся стили, которые нужно переопределить принудительно,
@@ -5,8 +13,29 @@
 */
 
 .page.theme_light {
+  --main-bg-color: #f1b2ce;
+  --accent-color: #ff8dcb;
+  --main-text-color: #353430;
+  --nav-color: #353430;
+  background-image: url(../images/cover-image-light.png);
+  --section-heading-color:#ff0070; 
+  --footer-logo-color: #f1b2ce;
+  --header-logo-color: #FFC2E6;
+
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --main-bg-color: #f1b2ce;
+    --section-heading-color: #ff8dcb;
+    --accent-color: #ff8dcb;
+    --main-text-color: #353430;
+    --nav-color: #353430;
+    --footer-logo-color: #f1b2ce;
+    --header-logo-color: #ff0070;
+  }
 }
