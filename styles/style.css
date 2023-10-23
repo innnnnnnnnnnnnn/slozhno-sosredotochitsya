@@ -16,7 +16,7 @@
 
 .header {
   /*шапка*/
-  margin-block-end: 30px;
+  margin-block-end: 40px;
   padding: 10px;
   display: grid;
 }
@@ -26,7 +26,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, auto);
     padding: 20px;
-    margin-block-end: 60px;
+    margin-block-end: 40px;
   }
 }
 
@@ -85,7 +85,7 @@
 
 .header__theme-menu {
   /*Блок навигации*/
-  margin-block-start: 39px;
+  margin-block-start: 40px;
   max-inline-size: fit-content;
   justify-self: end;
 }
@@ -119,11 +119,6 @@
   justify-content: end;
 }
 
-@media (min-width: 768px) {
-  .header__theme-menu-list {
-    row-gap: 17px;
-  }
-}
 
 @media (min-width: 1024px) {
   .header__theme-menu-list {
@@ -158,7 +153,7 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  padding: 0 13px;
+  padding: 2px 13px;
 }
 
 .header__theme-menu-button:focus {
@@ -228,21 +223,18 @@
   font-style: normal;
   font-weight: 700;
   line-height: 82.5%; /* 129.525px */
-  margin-block-start: 75px;
+  margin-block-start: 65px;
   margin-block-end: 55px;
 }
 
 @media (min-width: 768px) {
   .title {
     --header-logo-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    --header-logo-size: var(
-      --header-logo-size,
-      clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem)
-    );
     grid-column: span 2;
     grid-row: 3;
     margin-block-start: 173px;
     margin-block-end: 162px;
+    
   }
 }
 
@@ -251,6 +243,7 @@
     grid-column: span 4;
     margin-block-start: 273px;
     margin-block-end: 114px;
+    --header-logo-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 }
 
@@ -258,7 +251,7 @@
   /*цветной заголовок*/
   min-width: 355px;
   max-width: 491px;
-  margin-block-end: 55px;
+  margin-block-end: 60px;
   justify-self: end;
 }
 
@@ -280,7 +273,7 @@
 
 .main {
   /*блок с информацией*/
-  padding: 10px;
+  padding: 0 10px;
 }
 
 @media (min-width: 768px) {
@@ -293,6 +286,8 @@
 .section {
   /*отступы между секциями*/
   margin-block-end: 50px;
+  --main-gap:20px;
+  column-gap: var(--main-gap,20px);
 }
 
 @media (min-width: 768px) {
@@ -304,9 +299,7 @@
 @media (min-width: 768px) {
   .section__one {
     display: grid;
-    grid-template-columns: 1fr fit-content(472px);
-    --main-gap: 20px;
-    column-gap: var(--main-gap, 20px);
+    grid-template-columns: 1fr 2fr;
   }
 }
 
@@ -315,8 +308,6 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: repeat(4, auto);
-    --main-gap: 20px;
-    row-gap: var(--main-gap, 20px);
   }
 }
 
@@ -324,7 +315,6 @@
   .section__two {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto 1fr;
-    column-gap: 20px;
     align-items: start;
   }
 }
@@ -394,7 +384,7 @@
 
 .accent__title {
   /*цветной заголовок*/
-  color: var(--accent-color, #ff0070);
+  color: var(--main-accent-text-color, #ff0070);
   font-family: var(--main-font-family, monospace);
   font-size: var(--main-text-size, 18px);
   font-style: normal;
@@ -403,21 +393,17 @@
   margin-block-end: 20px;
 }
 
-@media (min-width: 768px) {
-  .accent__title {
-    margin-block-end: 0;
-  }
-}
 
-article .container:not(:last-of-type) {
+.section .container:not(:last-of-type){/*всем div добавили отступы в 20px,кроме последних*/
   margin-block-end: 20px;
 }
 
-@media (min-width: 768px) {
-  .section__three .container:first-of-type {
+  .section__three .container:first-of-type {/*Первому блоку в 3 секции сделали отступ*/
     margin-block-start: 20px;
   }
-}
+
+
+
 
 .title__decor {
   /*цветной заголовок 2 уровня*/
@@ -452,15 +438,20 @@ article .container:not(:last-of-type) {
   font-weight: lighter;
 }
 
+.container__img{
+  margin-block-start: 10px;
+  display: grid;
+  gap: var(--main-gap);
+
+}
 
 @media (min-width: 768px) {
-  .container__image {
-    display: grid;
+  .container__img {
     --main-gap: 20px;
-    gap: var(--main-gap, 20px);
+    gap: var(--main-gap,20px);
     margin-block-start: 20px;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
     grid-template-areas:
       "ocean ocean cream"
       "cassette books cream"
@@ -505,7 +496,7 @@ article .container:not(:last-of-type) {
 
 .footer {
   position: relative;
-  margin-block-start: 40px;
+  margin-block-start: 20px;
   padding: 10px;
   min-height: 667px;
   display: flex;
@@ -533,7 +524,7 @@ article .container:not(:last-of-type) {
 
 .title-footer {
   color: var(--footer-logo-color, #db00ff);
-  text-shadow: 4px 4px 0px var(--section-heading-color, #ff0070);
+  text-shadow: 4px 4px 0px var(--section-heading-color, #FF8DCB);
   font-family: var(--main-font-family, monospace);
   font-size: var(
     --footer-logo-size,
@@ -542,15 +533,11 @@ article .container:not(:last-of-type) {
   font-style: normal;
   font-weight: 700;
   line-height: 82.5%; /* 129.525px */
-  letter-spacing: 4px;
+  
 }
 
 @media (min-width: 768px) {
   .title-footer {
     --footer-logo-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    font-size: var(
-      --footer-logo-size,
-      clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem)
-    );
   }
 }

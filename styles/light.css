@@ -12,9 +12,10 @@
   --main-text-color: #353430;
   --nav-color: #353430;
   background-image: url(../images/cover-image-light.png);
-  --section-heading-color: #ff0070;
+  --section-heading-color: #FF8DCB;
   --footer-logo-color: #f1b2ce;
   --header-logo-color: #ffc2e6;
+  --main-accent-text-color:#353430;
 }
 
 @media (prefers-color-scheme: light) {
