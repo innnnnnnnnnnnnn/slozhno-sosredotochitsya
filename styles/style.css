@@ -13,7 +13,6 @@
 .header {
   /*шапка*/
   margin-block-end: 40px;
-  padding: 10px;
   display: grid;
   min-height: 668px;
   height: 100vh;
@@ -24,7 +23,6 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, auto);
     margin-block-end: 60px;
-    padding: 20px;
     min-height: 1024px;
   }
 }
@@ -100,6 +98,8 @@
 @media (min-width: 768px) {
   .header__REC {
     grid-column: 2;
+    margin-block-start: 20px;
+    margin-inline-end: 20px;
   }
 }
 
@@ -107,7 +107,8 @@
   .header__REC {
     grid-row: 1;
     grid-column: 4;
-    padding-inline-end: 29px;
+    padding-inline-end: 45px;
+    padding-block-start: 20px;
   }
 }
 
@@ -142,6 +143,7 @@
     margin-block-start: 146px;
     grid-column: 2;
     grid-row: 2;
+    margin-inline-end: 10px;
   }
 }
 
@@ -150,7 +152,7 @@
     grid-row: 1;
     grid-column: span 2/4;
     justify-self: center;
-    margin: 0;
+    margin-block-start: 20px;
   }
 }
 
@@ -239,17 +241,14 @@
     --header-logo-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     grid-column: span 2;
     grid-row: 3;
-    margin-block-start: 173px;
-    margin-block-end: 162px;
-    margin-inline-start: -3px;
+    margin: 173px 170px 162px 0;
   }
 }
 
 @media (min-width: 1024px) {
   .title {
     grid-column: span 4;
-    margin-block-start: 273px;
-    margin-block-end: 114px;
+    margin: 273px 265px 114px 0;
     --header-logo-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 }
@@ -268,6 +267,7 @@
     grid-row: 4;
     grid-column: 2;
     margin-block-end: 138px;
+    margin-inline-end: 10px;
   }
 }
 
@@ -276,6 +276,7 @@
     min-width: 491px;
     grid-column: span 4;
     margin-block-end: 134px;
+    margin-inline-end: 20px;
   }
 }
 
