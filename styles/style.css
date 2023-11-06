@@ -14,6 +14,7 @@
   /*шапка*/
   margin-block-end: 40px;
   display: grid;
+  grid-template-rows: repeat(3, min-content);
   min-height: 668px;
   height: 100vh;
 }
@@ -21,7 +22,7 @@
 @media (min-width: 768px) {
   .header {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, auto);
+    grid-template-rows: repeat(4, min-content);
     margin-block-end: 60px;
     min-height: 1024px;
   }
@@ -31,6 +32,7 @@
   .header {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, min-content);
     min-height: 768px;
   }
 }
@@ -90,7 +92,8 @@
   line-height: 25px; /* 138.889% */
   position: relative;
   text-align: end;
-  padding-inline-end: 25px;
+  padding-inline-end: 38px;
+  margin-block-start: 10px;
   max-width: fit-content;
   justify-self: end;
 }
@@ -107,8 +110,6 @@
   .header__REC {
     grid-row: 1;
     grid-column: 4;
-    padding-inline-end: 45px;
-    padding-block-start: 20px;
   }
 }
 
@@ -134,16 +135,17 @@
 .header__theme-menu {
   /*Блок навигации*/
   margin-block-start: 40px;
+  margin-inline-end: 10px;
   max-inline-size: fit-content;
   justify-self: end;
 }
 
 @media (min-width: 768px) {
   .header__theme-menu {
-    margin-block-start: 146px;
+    margin-block-start: 150px;
     grid-column: 2;
     grid-row: 2;
-    margin-inline-end: 10px;
+    margin-inline-end: 20px;
   }
 }
 
@@ -234,6 +236,7 @@
   line-height: 82.5%; /* 129.525px */
   margin-block-start: 65px;
   margin-block-end: 55px;
+  margin: 65px 10px 55px;
 }
 
 @media (min-width: 768px) {
@@ -248,6 +251,7 @@
 @media (min-width: 1024px) {
   .title {
     grid-column: span 4;
+    grid-row: 2;
     margin: 273px 265px 114px 0;
     --header-logo-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
@@ -260,6 +264,8 @@
   margin-block-end: 60px;
   justify-self: end;
   height: fit-content;
+  margin-inline-start: 10px;
+  margin-inline-end: 10px;
 }
 
 @media (min-width: 768px) {
@@ -418,7 +424,6 @@
   font-style: normal;
   font-weight: 700;
   line-height: 23.4px; /* 130% */
-  width: 100%;
 }
 
 .text {
